@@ -1,0 +1,23 @@
+﻿<Window x:Class="TestRestClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestRestClient"
+        xmlns:prism="http://prismlibrary.com/"
+        mc:Ignorable="d"
+        Title="TestRestClient" Height="450" Width="800"
+        prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="10">
+            <Label Content="Url" Target="{Binding ElementName=Url}"/>
+            <TextBox Name="Url" Text="{Binding Path=Url}" TextWrapping="Wrap"/>
+            <Button Height="25" Width="80" Margin="0,10,0,0"  Content="전송" HorizontalAlignment="Left" Command="{Binding Path=SendCommand}"/>
+        </StackPanel>
+        <TextBox Name="Result" Grid.Row="1" Margin="10" Text="{Binding Path=ResultText}" IsReadOnly="True" TextWrapping="Wrap"/>
+    </Grid>
+</Window>
